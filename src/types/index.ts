@@ -1,3 +1,2 @@
-import { SocketActionsEnum } from "./ISocket"
-
-export { SocketActionsEnum }
+export * from "./ISocket"
+export * from "./IConfig"

@@ -1,19 +1,23 @@
 import express from "express"
 import { createServer } from "http"
-import { Server } from "socket.io"
-import { serverConfig } from "./config"
-import { setupSocketHandlers } from "./controllers/socketController"
-import logger from "./utils/logger"
+import cors from "cors"
+import { serverConfig } from "./config/index.js"
+import tokenController from "./controllers/token.controller.js"
 
 const app = express()
 const server = createServer(app)
-const io = new Server(server)
 
-io.on("connection", (socket) => {
-  logger.info(`New connection: ${socket.id}`)
-  setupSocketHandlers(io, socket)
-})
+app.use(express.json())
+
+app.use(
+  cors({
+    origin: ["http://localhost:3000"],
+    credentials: true,
+  })
+)
+
+app.use("/api", tokenController)
 
 server.listen(serverConfig.PORT, () => {
-  logger.info(`Server started on port ${serverConfig.PORT}`)
+  console.log(`Server started on port ${serverConfig.PORT}`)
 })

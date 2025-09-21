@@ -1,34 +1,4 @@
-# OpenAI Voice Chat Backend
+# LiveKit Voice Chat Sandbox
 
-## Getting Started
-
-### Clone the repository
-
-```sh
-git clone https://github.com/AndrewMysliuk/openai-voice-chat-backend.git
-cd openai-voice-chat-backend
-```
-
-### Install dependencies
-
-```
-yarn install
-```
-
-### Run backend application
-
-```
-yarn dev
-```
-
-### Build and run application
-
-```
-yarn build && yarn start
-```
-
-### Build and run Docker
-
-```
-make docker-build && make docker-run
-```
+This project is a sandbox environment for experimenting with real-time voice chat using [LiveKit](https://livekit.io/) and OpenAI.  
+It serves as a backend prototype for testing voice AI agents, audio streaming, and integration of conversational features.

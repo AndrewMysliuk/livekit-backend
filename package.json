@@ -1,28 +1,31 @@
 {
-  "name": "openai-voice-chat-backend",
+  "name": "livekit-backend",
   "version": "1.0.0",
   "main": "index.js",
+  "type": "module",
   "repository": "https://github.com/AndrewMysliuk/openai-voice-chat-backend.git",
   "author": "AndrewMysliuk <andre061120@gmail.com>",
   "license": "MIT",
   "scripts": {
     "dev": "nodemon",
     "build": "tsc",
-    "start": "node build/index.js"
+    "start:api": "node dist/index.js",
+    "start:agent": "dotenv -e .env -- node dist/config/agent.config.js start"
   },
   "dependencies": {
-    "express": "^4.19.2",
-    "freeice": "^2.2.2",
-    "socket.io": "^4.7.5",
-    "uuid": "^10.0.0",
-    "winston": "^3.14.2",
-    "dotenv": "^16.4.5"
+    "@livekit/agents": "^1.0.5",
+    "@livekit/agents-plugin-openai": "^1.0.5",
+    "@livekit/noise-cancellation-node": "^0.1.9",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2"
   },
   "devDependencies": {
+    "@types/cors": "^2.8.19",
     "@types/dotenv": "^8.2.0",
     "@types/express": "^4.17.21",
-    "@types/node": "^22.5.4",
-    "@types/uuid": "^10.0.0",
+    "@types/node": "^24.5.2",
+    "dotenv-cli": "^10.0.0",
     "nodemon": "^3.1.4",
     "ts-node": "^10.9.2",
     "typescript": "^5.5.4"

@@ -1,2 +1,1 @@
-export * from "./ISocket"
-export * from "./IConfig"
+export * from "./IConfig.js"

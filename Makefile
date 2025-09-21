@@ -1,4 +1,4 @@
-IMAGE_NAME ?= openai-voice-chat-backend
+IMAGE_NAME ?= livekit-backend
 
 install:
 	yarn install
